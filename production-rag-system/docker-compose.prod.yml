@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - RAG_ENV=prod
+      - RAG_LOG_LEVEL=INFO
+    restart: unless-stopped
